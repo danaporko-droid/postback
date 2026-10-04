@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Wataa</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K87YC59PJ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K87YC59PJ8');
+  </script>
   <meta name="description" content="Open to continue.">
   <meta property="og:title" content="Wataa">
   <meta property="og:description" content="Open to continue.">
@@ -109,7 +116,8 @@
       let host = "";
       try { host = new URL(document.referrer).hostname; } catch (e) {}
       if (!host) return "direct";
-      if (/t\.co|twitter|x\.com/.test(host)) return "x";
+      if (/t\\.co|twitter|x\\.com/.test(host)) return "x";
+      if (/youtube|youtu\\.be/.test(host)) return "youtube";
       return host.slice(0, 80);
     }
     function offerUrl() {
@@ -126,10 +134,14 @@
     applyLang(currentLang);
     document.getElementById("cta").href = offerUrl();
     document.getElementById("cta").addEventListener("click", function () {
+      var src = sourceName();
+      if (typeof gtag === "function") {
+        gtag("event", "offer_click", { source: src, campaign: new URLSearchParams(location.search).get("c") || "main" });
+      }
       try {
         const key = "clicks";
         const list = JSON.parse(localStorage.getItem(key) || "[]");
-        list.push({ t: Date.now(), src: sourceName(), ref: document.referrer || "direct", q: location.search });
+        list.push({ t: Date.now(), src: src, ref: document.referrer || "direct", q: location.search });
         localStorage.setItem(key, JSON.stringify(list.slice(-200)));
       } catch (e) {}
     });
