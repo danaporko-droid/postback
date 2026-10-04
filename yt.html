@@ -1,108 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>18+ Рядом с тобой</title>
-  <meta name="description" content="18+. Новые анкеты рядом. Нажми, чтобы обновить.">
-  <meta property="og:title" content="18+ Рядом с тобой">
-  <meta property="og:description" content="Новые анкеты. Нажми, чтобы обновить.">
-  <meta property="og:image" content="https://open-dating-card.vercel.app/IMG_1546.jpeg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://open-dating-card.vercel.app/IMG_1546.jpeg">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #fff; background: #07060b; overflow-x: hidden; }
-    .bg { position: fixed; inset: 0; background: radial-gradient(circle at 20% 10%, rgba(255, 45, 149, .35), transparent 32%), radial-gradient(circle at 80% 80%, rgba(120, 40, 255, .28), transparent 36%), #07060b; }
-    .orb { position: absolute; width: 180px; height: 180px; border-radius: 50%; filter: blur(8px); opacity: .35; animation: float 7s ease-in-out infinite; }
-    .orb.a { background: #ff2d95; top: 8%; left: -40px; }
-    .orb.b { background: #7a2cff; bottom: 10%; right: -50px; animation-delay: -2s; }
-    @keyframes float { 50% { transform: translateY(-24px) scale(1.05); } }
-    .wrap { position: relative; z-index: 1; max-width: 430px; margin: 0 auto; padding: 22px 18px 36px; }
-    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-    .badge, .live { font-size: 12px; letter-spacing: .4px; border-radius: 999px; padding: 6px 10px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
-    .live { color: #ffd0e8; }
-    .live i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #ff2d95; margin-right: 6px; animation: blink 1.2s infinite; }
-    @keyframes blink { 50% { opacity: .3; } }
-    .card { border-radius: 28px; padding: 18px; background: rgba(18, 12, 24, .86); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
-    .photo { height: 280px; border-radius: 22px; display: flex; align-items: flex-end; padding: 16px; background: linear-gradient(160deg, #ff4fa3, #6d28ff 70%); position: relative; overflow: hidden; }
-    .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(0,0,0,.72)); }
-    .silhouette { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); font-size: 92px; animation: pop .45s ease; }
-    @keyframes pop { from { transform: translate(-50%, -46%) scale(.86); opacity: .2; } }
-    .who { position: relative; z-index: 1; }
-    .who b { display: block; font-size: 28px; }
-    .who span { color: #ffd6ea; font-size: 14px; }
-    .meta { display: flex; gap: 8px; margin: 14px 0; flex-wrap: wrap; }
-    .meta span { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: rgba(255,45,149,.14); color: #ffc1df; }
-    .regen, .go { width: 100%; border: 0; border-radius: 999px; padding: 16px; font-weight: 800; font-size: 16px; cursor: pointer; }
-    .regen { background: #fff; color: #1a1020; margin-bottom: 10px; }
-    .go { background: linear-gradient(90deg, #ff2d95, #c026d3); color: #fff; animation: pulse 1.8s infinite; }
-    @keyframes pulse { 50% { transform: scale(1.03); } }
-    .note { margin-top: 12px; color: #9a90a3; font-size: 12px; text-align: center; }
-    .gate { position: fixed; inset: 0; z-index: 5; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.72); padding: 20px; }
-    .box { width: min(380px, 100%); background: #140f1a; border-radius: 24px; padding: 22px; text-align: center; }
-    .hidden { display: none; }
-    .shake { animation: shake .35s linear; }
-    @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>18+ Она онлайн</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;background:#07060b;overflow:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,45,149,.45),transparent 28%),radial-gradient(circle at 50% 80%,rgba(120,40,255,.28),transparent 32%),#07060b}
+.pulse{position:fixed;left:50%;top:46%;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,45,149,.45);transform:translate(-50%,-50%);animation:ring 2.2s ease-out infinite}
+.pulse.d2{animation-delay:.7s}.pulse.d3{animation-delay:1.4s}
+@keyframes ring{from{transform:translate(-50%,-50%) scale(.55);opacity:.7}to{transform:translate(-50%,-50%) scale(1.7);opacity:0}}
+.box{position:relative;z-index:1;width:min(420px,92vw);text-align:center;padding:12px}
+.age{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(255,45,149,.16);border:1px solid rgba(255,45,149,.4);color:#ffb3d8;font-size:13px;letter-spacing:1px}
+h1{font-size:34px;line-height:1.15;margin-bottom:10px}
+p{color:#d9cfe2;font-size:16px;line-height:1.4;margin-bottom:22px}
+.go{position:relative;width:100%;border:0;border-radius:999px;padding:18px 20px;font-size:18px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(90deg,#ff2d95,#e11d48);box-shadow:0 12px 40px rgba(255,45,149,.45);animation:bump 1.3s ease-in-out infinite}
+@keyframes bump{50%{transform:scale(1.04)}}
+.live{margin-top:14px;color:#b9adc4;font-size:13px}
+.live i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#39e58c;margin-right:6px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.35}}
+</style>
 </head>
 <body>
-  <div class="bg"><div class="orb a"></div><div class="orb b"></div></div>
-  <div class="gate" id="gate">
-    <div class="box">
-      <div class="badge">18+</div>
-      <h1 style="margin:14px 0 8px">Тебе есть 18?</h1>
-      <p style="color:#c9bfd2;margin-bottom:16px">Дальше только взрослые анкеты. Нажимая, подтверждаешь возраст.</p>
-      <button class="go" id="yes" type="button">Да, мне есть 18</button>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="top"><div class="badge">ADULT · 18+</div><div class="live"><i></i><span id="online">128 рядом</span></div></div>
-    <div class="card" id="card">
-      <div class="photo" id="photo"><div class="silhouette" id="emoji">🔥</div><div class="who"><b id="name">Алина, 23</b><span id="dist">2.4 км · была только что</span></div></div>
-      <div class="meta" id="tags"></div>
-      <button class="regen" id="regen" type="button">Обновить анкету</button>
-      <button class="go" id="go" type="button">Открыть контакт</button>
-      <p class="note" id="left">Осталось обновлений: 2. Потом откроется прямой контакт.</p>
-    </div>
-  </div>
-  <script>
-    const OFFER = "https://spope.top/click?o=2&a=4444";
-    const people = [["Алина, 23", "2.4 км · была только что", "🔥", "#ff4fa3", "ищет встречу сегодня"], ["Мила, 26", "1.1 км · онлайн", "💋", "#c026d3", "без переписки"], ["Катя, 21", "4.8 км · 3 мин назад", "🍑", "#7c3aed", "новый профиль"], ["Соня, 29", "800 м · онлайн", "😈", "#e11d48", "хочет написать первой"]];
-    let left = 2, i = 0, sent = false;
-    const tags = document.getElementById("tags");
-    function paint(n) {
-      const p = people[n % people.length];
-      document.getElementById("name").textContent = p[0];
-      document.getElementById("dist").textContent = p[1];
-      document.getElementById("emoji").textContent = p[2];
-      document.getElementById("photo").style.background = "linear-gradient(160deg," + p[3] + ",#24122f 72%)";
-      tags.innerHTML = "<span>18+</span><span>" + p[4] + "</span><span>фото открыто</span>";
-      document.getElementById("emoji").style.animation = "none";
-      void document.getElementById("emoji").offsetWidth;
-      document.getElementById("emoji").style.animation = "pop .45s ease";
-    }
-    function offer() {
-      const q = new URLSearchParams(location.search);
-      const url = new URL(OFFER);
-      url.searchParams.set("sub1", q.get("src") || "youtube");
-      url.searchParams.set("sub2", q.get("c") || "regen");
-      return url.toString();
-    }
-    function openOffer() { if (sent) return; sent = true; location.href = offer(); }
-    document.getElementById("yes").onclick = function () { document.getElementById("gate").classList.add("hidden"); };
-    document.getElementById("regen").onclick = function () {
-      const card = document.getElementById("card");
-      card.classList.remove("shake"); void card.offsetWidth; card.classList.add("shake");
-      if (left <= 1) { openOffer(); return; }
-      left -= 1; i += 1; paint(i);
-      document.getElementById("online").textContent = (120 + i * 7) + " рядом";
-      document.getElementById("left").textContent = "Осталось обновлений: " + left + ". Потом откроется прямой контакт.";
-    };
-    document.getElementById("go").onclick = openOffer;
-    paint(0);
-  </script>
+<div class="bg"></div>
+<div class="pulse"></div><div class="pulse d2"></div><div class="pulse d3"></div>
+<div class="box">
+  <div class="age">18+</div>
+  <h1 id="title">Она онлайн в твоём городе</h1>
+  <p id="sub">Фото уже открыто. Место держится пару минут.</p>
+  <button class="go" id="go" type="button">Открыть сейчас</button>
+  <div class="live"><i></i><span id="live">128 смотрят это сообщение</span></div>
+</div>
+<script>
+const OFFER="https://spope.top/click?o=2&a=4444";
+let city="твоём городе", sent=false;
+const mobile=/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+function paint(){
+  document.getElementById("title").textContent="Она онлайн в "+city;
+  document.getElementById("sub").textContent=mobile?"Написала с телефона. Открой, пока не пропала.":"Фото уже открыто. Место держится пару минут.";
+  document.getElementById("live").textContent=(96+Math.floor(Math.random()*40))+" смотрят в "+city;
+}
+function openOffer(){
+  if(sent) return;
+  sent=true;
+  const q=new URLSearchParams(location.search);
+  const url=new URL(OFFER);
+  url.searchParams.set("sub1", q.get("src")||"youtube");
+  url.searchParams.set("sub2", q.get("c")||"onebtn");
+  url.searchParams.set("sub3", (city+"|"+(mobile?"mobile":"desktop")).slice(0,80));
+  location.href=url.toString();
+}
+document.getElementById("go").onclick=openOffer;
+document.body.onclick=function(e){ if(e.target.id!=="go") openOffer(); };
+paint();
+fetch("https://ipwho.is/").then(r=>r.json()).then(function(d){ if(d&&d.city){ city=d.city; paint(); } }).catch(function(){});
+</script>
 </body>
 </html>
