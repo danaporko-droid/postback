@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>18+ Она онлайн</title>
+<title>18+</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;background:#07060b;overflow:hidden}
-.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,45,149,.45),transparent 28%),radial-gradient(circle at 50% 80%,rgba(120,40,255,.28),transparent 32%),#07060b}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 28%,rgba(255,45,149,.46),transparent 28%),radial-gradient(circle at 50% 82%,rgba(120,40,255,.28),transparent 32%),#07060b}
 .pulse{position:fixed;left:50%;top:46%;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,45,149,.45);transform:translate(-50%,-50%);animation:ring 2.2s ease-out infinite}
 .pulse.d2{animation-delay:.7s}.pulse.d3{animation-delay:1.4s}
 @keyframes ring{from{transform:translate(-50%,-50%) scale(.55);opacity:.7}to{transform:translate(-50%,-50%) scale(1.7);opacity:0}}
 .box{position:relative;z-index:1;width:min(420px,92vw);text-align:center;padding:12px}
 .age{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(255,45,149,.16);border:1px solid rgba(255,45,149,.4);color:#ffb3d8;font-size:13px;letter-spacing:1px}
-h1{font-size:34px;line-height:1.15;margin-bottom:10px}
+h1{font-size:32px;line-height:1.15;margin-bottom:10px}
 p{color:#d9cfe2;font-size:16px;line-height:1.4;margin-bottom:22px}
-.go{position:relative;width:100%;border:0;border-radius:999px;padding:18px 20px;font-size:18px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(90deg,#ff2d95,#e11d48);box-shadow:0 12px 40px rgba(255,45,149,.45);animation:bump 1.3s ease-in-out infinite}
+.go{width:100%;border:0;border-radius:999px;padding:18px 20px;font-size:18px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(90deg,#ff2d95,#e11d48);box-shadow:0 12px 40px rgba(255,45,149,.45);animation:bump 1.3s ease-in-out infinite}
 @keyframes bump{50%{transform:scale(1.04)}}
 .live{margin-top:14px;color:#b9adc4;font-size:13px}
 .live i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#39e58c;margin-right:6px;animation:blink 1s infinite}
 @keyframes blink{50%{opacity:.35}}
+body.rtl{direction:rtl}
 </style>
 </head>
 <body>
@@ -28,28 +29,63 @@ p{color:#d9cfe2;font-size:16px;line-height:1.4;margin-bottom:22px}
 <div class="pulse"></div><div class="pulse d2"></div><div class="pulse d3"></div>
 <div class="box">
   <div class="age">18+</div>
-  <h1 id="title">Она онлайн в твоём городе</h1>
-  <p id="sub">Фото уже открыто. Место держится пару минут.</p>
-  <button class="go" id="go" type="button">Открыть сейчас</button>
-  <div class="live"><i></i><span id="live">128 смотрят это сообщение</span></div>
+  <h1 id="title">She is online near you</h1>
+  <p id="sub">Photo is unlocked. This spot will not stay open.</p>
+  <button class="go" id="go" type="button">Open now</button>
+  <div class="live"><i></i><span id="live">128 people are watching</span></div>
 </div>
 <script>
 const OFFER="https://spope.top/click?o=2&a=4444";
-let city="твоём городе", sent=false;
+const T={
+  en:{title:"She is online in {city}",sub:"Photo is unlocked. Open it before she leaves.",btn:"Open now",live:"{n} people watching in {city}"},
+  ru:{title:"Она онлайн в {city}",sub:"Фото уже открыто. Зайди, пока не пропала.",btn:"Открыть сейчас",live:"{n} смотрят в {city}"},
+  uk:{title:"Вона онлайн у {city}",sub:"Фото вже відкрите. Зайди, поки не зникла.",btn:"Відкрити зараз",live:"{n} дивляться у {city}"},
+  es:{title:"Está online en {city}",sub:"La foto ya está abierta. Entra antes de que se vaya.",btn:"Abrir ahora",live:"{n} mirando en {city}"},
+  de:{title:"Sie ist online in {city}",sub:"Foto ist offen. Schau rein, bevor sie weg ist.",btn:"Jetzt öffnen",live:"{n} schauen in {city}"},
+  fr:{title:"Elle est en ligne à {city}",sub:"Photo déjà ouverte. Entre avant qu'elle parte.",btn:"Ouvrir maintenant",live:"{n} regardent à {city}"},
+  pt:{title:"Ela está online em {city}",sub:"A foto já está aberta. Entra antes que ela saia.",btn:"Abrir agora",live:"{n} vendo em {city}"},
+  it:{title:"È online a {city}",sub:"Foto già aperta. Entra prima che sparisca.",btn:"Apri ora",live:"{n} stanno guardando a {city}"},
+  pl:{title:"Jest online w {city}",sub:"Zdjęcie już otwarte. Wejdź, zanim zniknie.",btn:"Otwórz teraz",live:"{n} ogląda w {city}"},
+  tr:{title:"{city} içinde çevrimiçi",sub:"Fotoğraf açık. Gitmeden gir.",btn:"Şimdi aç",live:"{city} içinde {n} kişi bakıyor"},
+  ar:{title:"هي متصلة في {city}",sub:"الصورة مفتوحة. ادخل قبل أن تغادر.",btn:"افتح الآن",live:"{n} يشاهدون في {city}"},
+  nl:{title:"Ze is online in {city}",sub:"Foto is open. Kijk voordat ze weg is.",btn:"Nu openen",live:"{n} kijken in {city}"},
+  cs:{title:"Je online v {city}",sub:"Fotka je otevřená. Vstup, než zmizí.",btn:"Otevřít teď",live:"{n} kouká v {city}"},
+  ro:{title:"E online în {city}",sub:"Poza e deschisă. Intră înainte să plece.",btn:"Deschide acum",live:"{n} se uită în {city}"},
+  hu:{title:"Online van {city}ban",sub:"A kép nyitva. Nézd meg, mielőtt eltűnik.",btn:"Megnyitás",live:"{n} nézi {city}ban"},
+  id:{title:"Dia online di {city}",sub:"Foto sudah terbuka. Masuk sebelum dia pergi.",btn:"Buka sekarang",live:"{n} menonton di {city}"},
+  th:{title:"เธอออนไลน์ใน {city}",sub:"รูปเปิดแล้ว เข้าก่อนเธอหายไป",btn:"เปิดตอนนี้",live:"{n} คนกำลังดูใน {city}"},
+  vi:{title:"Cô ấy đang online ở {city}",sub:"Ảnh đã mở. Vào trước khi cô ấy rời đi.",btn:"Mở ngay",live:"{n} người đang xem ở {city}"},
+  ja:{title:"{city}でオンライン",sub:"写真は公開中。いなくなる前に開いて。",btn:"今すぐ開く",live:"{city}で{n}人が閲覧中"},
+  ko:{title:"{city}에서 온라인",sub:"사진이 열려 있어요. 사라지기 전에 확인하세요.",btn:"지금 열기",live:"{city}에서 {n}명 보는 중"},
+  zh:{title:"她在{city}在线",sub:"照片已解锁。趁她还在，马上打开。",btn:"立即打开",live:"{city}有{n}人正在看"},
+  hi:{title:"वह {city} में ऑनलाइन है",sub:"फोटो खुल चुकी है। जाने से पहले खोलो।",btn:"अभी खोलें",live:"{city} में {n} लोग देख रहे हैं"},
+  sv:{title:"Hon är online i {city}",sub:"Fotot är öppet. Gå in innan hon försvinner.",btn:"Öppna nu",live:"{n} tittar i {city}"}
+};
+function lang(){
+  const n=(navigator.language||"en").toLowerCase();
+  const code=n.slice(0,2);
+  if(code==="zh") return "zh";
+  return T[code]?code:"en";
+}
+let city="your city", L=T[lang()], sent=false;
 const mobile=/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+function fill(s){return s.replaceAll("{city}",city).replaceAll("{n}",String(90+Math.floor(Math.random()*50)));}
 function paint(){
-  document.getElementById("title").textContent="Она онлайн в "+city;
-  document.getElementById("sub").textContent=mobile?"Написала с телефона. Открой, пока не пропала.":"Фото уже открыто. Место держится пару минут.";
-  document.getElementById("live").textContent=(96+Math.floor(Math.random()*40))+" смотрят в "+city;
+  document.documentElement.lang=lang();
+  document.body.classList.toggle("rtl", lang()==="ar");
+  document.getElementById("title").textContent=fill(L.title);
+  document.getElementById("sub").textContent=fill(L.sub);
+  document.getElementById("go").textContent=L.btn;
+  document.getElementById("live").textContent=fill(L.live);
 }
 function openOffer(){
   if(sent) return;
   sent=true;
   const q=new URLSearchParams(location.search);
   const url=new URL(OFFER);
-  url.searchParams.set("sub1", q.get("src")||"youtube");
-  url.searchParams.set("sub2", q.get("c")||"onebtn");
-  url.searchParams.set("sub3", (city+"|"+(mobile?"mobile":"desktop")).slice(0,80));
+  url.searchParams.set("sub1", q.get("src")||"direct");
+  url.searchParams.set("sub2", q.get("c")||lang());
+  url.searchParams.set("sub3", (city+"|"+(mobile?"mobile":"desktop")+"|"+lang()).slice(0,100));
   location.href=url.toString();
 }
 document.getElementById("go").onclick=openOffer;
